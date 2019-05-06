@@ -1,0 +1,53 @@
+/**
+ * All of the CSS for your public-facing functionality should be
+ * included in this file.
+ */
+
+ .widget.widget_salon_recent_post ul li {
+  overflow: hidden;
+  margin-bottom: 15px;
+}
+
+.widget.widget_salon_recent_post ul li .media a {
+	display: block;
+}
+
+.widget.widget_salon_recent_post ul li .media img {
+  width: 100%;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.widget.widget_salon_recent_post ul li .text {
+  overflow: hidden;
+}
+
+.widget.widget_salon_recent_post ul li .text .title {
+  padding: 8px;
+  color: #000;
+  display: block;
+  font-weight: 700;
+  background: #FFF;
+  margin-bottom: 5px;
+}
+
+.widget.widget_salon_recent_post ul li .text .date {
+  color: #B6A879;
+  padding: 8px;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.widget.widget_salon_recent_post ul li:hover .media img, .widget.widget_salon_recent_post ul li:focus .media img {
+  -webkit-transform: scale(1.2) rotate(-5deg);
+  -ms-transform: scale(1.2) rotate(-5deg);
+  transform: scale(1.2) rotate(-5deg);
+}
+
+.widget.widget_salon_recent_post ul li:hover .title, .widget.widget_salon_recent_post ul li:focus .title {
+  color: #FFF;
+  background: #B6A879;
+}

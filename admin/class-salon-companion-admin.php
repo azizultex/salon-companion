@@ -101,6 +101,12 @@ class Salon_Companion_Admin {
 
 		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/salon-companion-admin.js', array( 'jquery' ), $this->version, false );
 
+		wp_localize_script( $this->plugin_name, 'salon_companion_uploader', array(
+        	'upload' => __( 'Upload', 'salon-companion' ),
+        	'change' => __( 'Change', 'salon-companion' ),
+        	'msg'    => __( 'Please upload a valid image file.', 'salon-companion' )
+    	));
+
 	}
 
 	/**

@@ -7,14 +7,14 @@
  
 // register Salon_Recent_Post widget
 function salon_register_recent_post_widget() {
-    register_widget( 'Salon_Recent_Post' );
+    register_widget( 'Salon_Companion_Recent_Post' );
 }
 add_action( 'widgets_init', 'salon_register_recent_post_widget' );
  
  /**
- * Adds Salon_Recent_Post widget.
+ * Adds Salon_Companion_Recent_Post widget.
  */
-class Salon_Recent_Post extends WP_Widget {
+class Salon_Companion_Recent_Post extends WP_Widget {
 
     /**
      * Register widget with WordPress.
@@ -168,4 +168,4 @@ class Salon_Recent_Post extends WP_Widget {
         
     }
 
-} // class Salon_Recent_Post / class Salon_Recent_Post / class Salon_Recent_Post / class Salon_Recent_Post 
+}

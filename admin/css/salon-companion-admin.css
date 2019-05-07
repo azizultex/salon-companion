@@ -2,3 +2,48 @@
  * All of the CSS for your admin-specific functionality should be
  * included in this file.
  */
+ img {
+ 	max-width: 100%;
+ 	height: auto;
+ }
+ .salon-remove-icon {
+    background: url("../images/ico-delete.png");
+    top: 0;
+    display: block;
+    height: 16px;
+    padding: 0;
+    position: absolute;
+    text-indent: -9999px;
+    width: 16px;
+    cursor: pointer;
+    right: 0;
+}
+.salon-remove-image {
+    background: url("../images/ico-delete.png");
+    display: block;
+    height: 16px;
+    right: 0;
+    padding: 0;
+    position: absolute;
+    text-indent: -9999px;
+    width: 16px;
+    cursor: pointer;
+}
+
+.link-image-repeat .widget-upload {
+    margin-bottom: 20px;
+}
+
+.salon-screenshot{
+	margin: 20px 0 10px; 
+	position: relative;
+}
+
+.salon-remove-image{
+	margin-top: 10px;
+	display: inline-block;
+}
+
+.salon-upload-button{
+	margin-top: 10px !important;
+}

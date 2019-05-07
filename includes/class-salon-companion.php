@@ -123,6 +123,16 @@ class Salon_Companion {
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-salon-companion-public.php';
 
 		/**
+		 * The class responsible for defining all the required functions.
+		 */
+		include SALONC_BASE_PATH . '/includes/class-salon-companion-functions.php';
+
+		/**
+		 * Recent post widget.
+		 */
+		require_once SALONC_BASE_PATH . '/includes/widgets/widget-feature.php';
+
+		/**
 		 * Recent post widget.
 		 */
 		require_once SALONC_BASE_PATH . '/includes/widgets/widget-recent-post.php';

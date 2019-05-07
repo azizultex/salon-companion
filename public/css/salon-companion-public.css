@@ -51,3 +51,20 @@
   color: #FFF;
   background: #B6A879;
 }
+
+/*** Featured */
+.featured-item .icon {
+    margin-right: 20px;
+}
+.featured-item .text {
+    overflow: hidden;
+}
+.featured-item .text .title {
+    margin-bottom: 5px;
+    text-transform: uppercase;
+}
+.featured-item .text .title p {
+    margin: 0;
+    font-size: 12px;
+    line-height: 18px;
+}

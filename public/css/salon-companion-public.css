@@ -54,17 +54,70 @@
 
 /*** Featured */
 .featured-item .icon {
-    margin-right: 20px;
+	margin-right: 20px;
 }
 .featured-item .text {
-    overflow: hidden;
+	overflow: hidden;
 }
 .featured-item .text .title {
-    margin-bottom: 5px;
-    text-transform: uppercase;
+	margin-bottom: 5px;
+	text-transform: uppercase;
 }
 .featured-item .text .title p {
-    margin: 0;
-    font-size: 12px;
-    line-height: 18px;
+	margin: 0;
+	font-size: 12px;
+	line-height: 18px;
+}
+
+/*** Section title */
+.section-title .title {
+	font-family: "Abril Fatface", cursive;
+}
+.section-title p {
+	margin-top: 15px;
+	max-width: 800px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/* Special Gift Card */
+.special-gift-card {
+  background: #E8EDDF;
+  padding: 100px 0 20px;
+}
+
+.special-gift-card .section-title {
+  margin-bottom: 60px;
+}
+
+.special-gift-card .special-card {
+  padding: 40px;
+  height: 450px;
+  background: #FEE0D8;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: right bottom;
+}
+
+.special-gift-card .special-card:nth-child(odd) {
+  background-color: #000;
+}
+
+.special-gift-card .special-card:nth-child(odd) p {
+  color: #FFF;
+}
+
+.special-gift-card .special-card .title {
+  color: #B6A879;
+  font-weight: 400;
+  font-family: "Abril Fatface", cursive;
+}
+
+.special-gift-card .special-card p {
+  font-size: 18px;
+  font-weight: 500;
+  max-width: 290px;
+  line-height: 30px;
+  font-family: "Rufina", serif;
+  letter-spacing: 0.9px;
 }

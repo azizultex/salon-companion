@@ -128,14 +128,29 @@ class Salon_Companion {
 		include SALONC_BASE_PATH . '/includes/class-salon-companion-functions.php';
 
 		/**
+		 * Card widget.
+		 */
+		require_once SALONC_BASE_PATH . '/includes/widgets/widget-card.php';
+
+		/**
 		 * Recent post widget.
 		 */
 		require_once SALONC_BASE_PATH . '/includes/widgets/widget-feature.php';
 
 		/**
+		 * Section Title widget.
+		 */
+		require_once SALONC_BASE_PATH . '/includes/widgets/widget-package.php';
+
+		/**
 		 * Recent post widget.
 		 */
 		require_once SALONC_BASE_PATH . '/includes/widgets/widget-recent-post.php';
+
+		/**
+		 * Section Title widget.
+		 */
+		require_once SALONC_BASE_PATH . '/includes/widgets/widget-section-title.php';
 
 		$this->loader = new Salon_Companion_Loader();
 

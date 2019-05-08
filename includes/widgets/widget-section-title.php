@@ -1,29 +1,29 @@
 <?php
 /**
- * Feature Widget
+ * Section Title Widget
  *
  * @package Salon_Companion
  */
 
-// register salon_register_feature_widget widget
-function salon_register_feature_widget(){
-    register_widget( 'Salon_Companion_Feature_Widget' );
+// register salon_register_section_title_widget widget
+function salon_register_section_title_widget(){
+    register_widget( 'Salon_Companion_Section_Title_Widget' );
 }
-add_action('widgets_init', 'salon_register_feature_widget');
+add_action('widgets_init', 'salon_register_section_title_widget');
  
  /**
- * Adds Salon_Companion_Feature_Widget widget.
+ * Adds Salon_Companion_Section_Title_Widget widget.
  */
-class Salon_Companion_Feature_Widget extends WP_Widget {
+class Salon_Companion_Section_Title_Widget extends WP_Widget {
 
     /**
      * Register widget with WordPress.
      */
     public function __construct() {
         parent::__construct(
-            'salon_feature_widget', // Base ID
-            __( 'Salon: Feature', 'salon-companion' ), // Name
-            array( 'description' => __( 'A Feature Widget.', 'salon-companion' ), ) // Args
+            'salon_section_title_widget', // Base ID
+            __( 'Salon: Section Title', 'salon-companion' ), // Name
+            array( 'description' => __( 'A Section Title Widget.', 'salon-companion' ), ) // Args
         );
     }
 
@@ -37,40 +37,28 @@ class Salon_Companion_Feature_Widget extends WP_Widget {
      */
     public function widget( $args, $instance ) {
         
-        $obj         = new Salon_Companion_Functions();
-        $image       = ! empty( $instance['image'] ) ? $instance['image'] : '';
         $title        = ! empty( $instance['title'] ) ? $instance['title'] : '' ;               
         $description = ! empty( $instance['description'] ) ? $instance['description'] : '';
-
-        if( $image ) {
-            $attachment_id = $image;
-        }
         
         // echo $args['before_widget'];
         ob_start(); 
         ?>
-        <div class="col-md-3 col-sm-6 col-xs-12">
-            <div class="featured-item">
-                <?php if( $image ){ ?>
-                <div class="icon pull-left">
-					<?php echo wp_get_attachment_image( $attachment_id, 'full', false, array( 'class' => 'img-responsive', 'alt' => esc_attr( $title ))) ;?>
-				</div>
-                <?php }?>
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="section-title text-center">
+                    <?php if ($title): ?>
+                        <h2 class="title separator center"><?php echo $title; ?></h2>
+                    <?php endif ?>
 
-                <div class="text">
-                	<?php if ($title): ?>
-						<h5 class="title"><?php echo $title; ?></h5>
-                	<?php endif ?>
-
-                	<?php if ($description): ?>
-						<?php echo wpautop( wp_kses_post( $description ) ); ?>
-                	<?php endif ?>
-				</div>
+                    <?php if ($description): ?>
+                        <?php echo wpautop( wp_kses_post( $description ) ); ?>
+                    <?php endif ?>
+                </div>
             </div>
-        </div>
+        </div><!-- /row -->
         <?php 
         $html = ob_get_clean();
-        echo apply_filters( 'salon_companion_feature_widget_filter', $html, $args, $instance );   
+        echo apply_filters( 'salon_companion_section_title_widget_filter', $html, $args, $instance );   
         // echo $args['after_widget'];
     }
 
@@ -83,20 +71,9 @@ class Salon_Companion_Feature_Widget extends WP_Widget {
      */
     public function form( $instance ) {
         
-        $obj         = new Salon_Companion_Functions();
-        $image       = ! empty( $instance['image'] ) ? $instance['image'] : '';
         $title        = ! empty( $instance['title'] ) ? $instance['title'] : '' ;        
         $description = ! empty( $instance['description'] ) ? $instance['description'] : '';
         ?>
-        <p>
-        	<?php 
-        		$obj->salon_companion_get_image_field( 
-        			$this->get_field_id( 'image' ), 
-        			$this->get_field_name( 'image' ), 
-        			$image, __( 'Upload Image', 'salon-companion' ) 
-        		); 
-        	?>
-        </p>
 
         <p>
             <label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php esc_html_e( 'Title', 'salon-companion' ); ?></label> 
@@ -104,7 +81,7 @@ class Salon_Companion_Feature_Widget extends WP_Widget {
         </p>
         
         <p>
-            <label for="<?php echo esc_attr( $this->get_field_id( 'description' ) ); ?>"><?php esc_html_e( 'Feature', 'salon-companion' ); ?></label>
+            <label for="<?php echo esc_attr( $this->get_field_id( 'description' ) ); ?>"><?php esc_html_e( 'Description', 'salon-companion' ); ?></label>
             <textarea name="<?php echo esc_attr( $this->get_field_name( 'description' ) ); ?>" class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'description' ) ); ?>"><?php print $description; ?></textarea>
         </p>
         
@@ -123,12 +100,11 @@ class Salon_Companion_Feature_Widget extends WP_Widget {
      */
     public function update( $new_instance, $old_instance ) {
         $instance                = array();
-        
-        $instance['image']       = ! empty( $new_instance['image'] ) ? esc_attr( $new_instance['image'] ) : '';
+
         $instance['title']        = ! empty( $new_instance['title'] ) ? sanitize_text_field( $new_instance['title'] ) : '' ;
         $instance['description'] = ! empty( $new_instance['description'] ) ? wp_kses_post( $new_instance['description'] ) : '';
         
         return $instance;
     }
     
-}  // class Salon_Companion_Feature_Widget / class Salon_Companion_Feature_Widget 
+}  // class Salon_Companion_Section_Title_Widget / class Salon_Companion_Section_Title_Widget 

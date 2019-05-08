@@ -16,7 +16,7 @@ jQuery(document).ready(function($) {
             var str = attachment.url.split('.').pop(); 
             var strarray = [ 'jpg', 'gif', 'png', 'jpeg' ]; 
             if( $.inArray( str, strarray ) != -1 ){
-                clicked.find('.salon-screenshot').empty().hide().append('<img src="' + attachment.url + '"><a class="rara-remove-image"></a>').slideDown('fast');
+                clicked.find('.salon-screenshot').empty().hide().append('<img src="' + attachment.url + '"><a class="salon-remove-image"></a>').slideDown('fast');
             }else{
                 clicked.find('.salon-screenshot').empty().hide().append('<small>'+salon_companion_uploader.msg+'</small>').slideDown('fast');    
             }

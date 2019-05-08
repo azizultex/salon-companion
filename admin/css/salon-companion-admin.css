@@ -47,3 +47,6 @@
 .salon-upload-button{
 	margin-top: 10px !important;
 }
+.package_category label {
+    display: block;
+}

@@ -15,7 +15,7 @@
  * @wordpress-plugin
  * Plugin Name:       Salon Companion
  * Plugin URI:        https://www.keendevs.com/
- * Description:       14 extremely useful custom widgets to create an engaging website.
+ * Description:       5 extremely useful custom widgets and package post type to create an engaging website.
  * Version:           1.0.0
  * Author:            KeenDevs
  * Author URI:        https://www.keendevs.com/
